@@ -1,4 +1,5 @@
 <h1>Your cocktail: <%= @cocktail.name %></h1>
+<%= cl_image_tag @cocktail.photo, height: 300, width: 400, crop: :fill %>
 
 <% @cocktail.doses.each do |dose| %>
   <p>You need to add<%= ' ' %><%= dose.description %><%= ' of ' %><%= dose.ingredient.name %><%= link_to '🗑️', dose_path(dose), method: :delete, data: { confirm: "Are you sure you want to get rid of that dose?" }  %></p>
